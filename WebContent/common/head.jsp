@@ -14,6 +14,7 @@
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	
 <style>
 #center {
 	text-align: center;
@@ -21,8 +22,8 @@
 
 ul {
 width : 100%;
-
 }
+
 .nav-item {
 font-weight: 900;
 font-size: 1.3em;

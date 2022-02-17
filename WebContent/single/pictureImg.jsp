@@ -14,12 +14,14 @@ String path = application.getRealPath("/")+"upload/";
 String filename = null;
 
 MultipartRequest  multi = new MultipartRequest(request, path, 10*1024*1024, "utf-8" );
-filename=multi.getFilesystemName("picture");
+filename=multi.getFilesystemName("picture"); //upload 폴더에 저장한다.
 %>
 <script>
-const img = opener.document.getElementById("pic")
-img.src="<%=request.getContextPath()%>/upload/<%=filename%>"
-opener.document.f.picture.value="<%=filename%>"
+const img = opener.document.getElementById("pic") //memberUpdate에 있는 id인 pic
+/* 이미지를 보여주는 것 */
+img.src="<%=request.getContextPath()%>/upload/<%=filename%>" 
+//f의 name의 있는 pricture와 value를 지정
+opener.document.f.picture.value="<%=filename%>" 
 self.close();
 
 </script>

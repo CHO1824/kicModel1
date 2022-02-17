@@ -28,6 +28,8 @@ location.href="<%=request.getContextPath()%>/view/member/loginForm.jsp";
 String email = request.getParameter("email");
 String tel = request.getParameter("tel");
 String pass = request.getParameter("pass");
+String picture = request.getParameter("picture");
+
 MemberDao md = new MemberDao();
 //MemberDao에서 selectOne는 맴버의 자료를 가져온다.
 Member mem = md.selectOne(login);
@@ -35,12 +37,15 @@ Member mem = md.selectOne(login);
 //member에 email, tel을 저장한다.
 mem.setEmail(email);
 mem.setTel(tel);
+mem.setPicture(picture);
+
+System.out.println(mem); //수정된 이미지 이름을 저장한다.
 
 
 if(mem.getPass().equals(pass)){ //맞지 않으면 끝내야한다.
 	
-	num = md.memberUpdate(mem); //여기부분이 에러가 나서 int부분을 위에 빼야한다.
-	msg = "회원정보가 수정되었습니다";
+	num = md.memberUpdate(mem); //MemberDao에 있는 mem
+	msg = "회원정보가 수정 되었습니다"; 
 	url = request.getContextPath() + "/view/main.jsp";
 }
 }
