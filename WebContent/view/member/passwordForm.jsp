@@ -61,10 +61,13 @@ location.href="<%=request.getContextPath()%>/view/member/loginForm.jsp";
 		<label>ID:</label>
 		<input type="text"
 		class="form-control" name="id" readonly="readonly" value="<%=login%>">
+		
 		<label>현재 비밀번호:</label>
 		<input type="password" class="form-control" name="pass">
+		
 			<label >변경 비밀번호:</label> 
 			<input type="password" class="form-control" name="newpass" > 
+			
 				<label >변경 비밀번호 확인:</label>
 			<input type="password" class="form-control" name="newpass2">
 		</div>
